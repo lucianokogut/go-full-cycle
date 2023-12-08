@@ -12,7 +12,7 @@ type ProductHandlers struct {
 	ListProductsUseCase  *usecase.ListProductsUseCase
 }
 
-func NewProductHandlers(createProductUseCase *usecase.CreateProductUseCase, listProductsUseCase *usecase.ListProductsUseCase) {
+func NewProductHandlers(createProductUseCase *usecase.CreateProductUseCase, listProductsUseCase *usecase.ListProductsUseCase) *ProductHandlers {
 	return &ProductHandlers{
 		CreateProductUseCase: createProductUseCase,
 		ListProductsUseCase:  listProductsUseCase,
