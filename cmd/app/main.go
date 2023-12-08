@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"br.com.lucianokogut/go-full-cycle-esquenta/internal/infra/akafka"
@@ -39,7 +40,7 @@ func main() {
 		dto := usecase.CreateProductInputDto{}
 		err := json.Unmarshal(msg.Value, &dto)
 		if err != nil {
-			//TODO log do erro da aplicação
+			fmt.Println("Erro na aplicação, logando mensagem...")
 		}
 		_, err = createProductUsecase.Execute(dto)
 	}
